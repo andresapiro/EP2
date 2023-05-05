@@ -47,4 +47,14 @@ def posiciona_frota(dicionario_frota):
                 grid[lista2[0]][lista2[1]] = 1
     return grid
 
+def afundados(dicionario_frota, grid):
+    navios_afundados = 0
+    for lista_grande in dicionario_frota.values():
+        for lista1 in lista_grande:
+            for lista2 in lista1:
+                grid[lista2[0]][lista2[1]] = 1
 
+    
+
+    
+    return navios_afundados
