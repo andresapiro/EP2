@@ -58,3 +58,37 @@ def afundados(dicionario_frota, grid):
 
     
     return navios_afundados
+def afundados(dicionario_frota, grid):
+    i = 0
+    afundado = 0
+    for posicao_barcos in dicionario_frota.values():
+        for barcos in posicao_barcos:
+                for cordenada in barcos:
+                    if dicionario_frota["porta-aviões"] == posicao_barcos:
+                        if grid[cordenada[0]][cordenada[1]] == 'X':
+                            i += 1
+                        if i == 4:
+                            afundado += 1
+                            i = 0
+                    if dicionario_frota["submarino"] == posicao_barcos:
+                        if grid[cordenada[0]][cordenada[1]] == 'X':
+                            i += 1
+                        if i == 1:
+                            afundado += 1
+                            i = 0
+                    if dicionario_frota["navio-tanque"] == posicao_barcos:
+                        if grid[cordenada[0]][cordenada[1]] == 'X':
+                            i += 1
+                        if i == 3:
+                            afundado += 1
+                            i = 0
+                            
+                    if dicionario_frota["contratorpedeiro"] == posicao_barcos:
+                        if grid[cordenada[0]][cordenada[1]] == 'X':
+                            i += 1
+                        if i == 2:
+                            afundado += 1
+                            i = 0
+                    
+                i = 0
+    return afundado
